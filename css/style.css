@@ -9,7 +9,7 @@
 
 :root {
   --bg-color: #1e2023;
-  --bg-second-color: #1e1f22;
+  --bg-second-color: #252528;
   --text-color: #d6e7d2;
   --main-color: #acadba;
 }
@@ -32,10 +32,10 @@ body {
   padding: 4rem 15%;
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
+  display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  display: flex;
 }
 
 #menu-icon {
@@ -62,12 +62,21 @@ span {
   color: transparent;
 }
 
+.navBar {
+  display: flex;
+}
+
 .navBar a {
   font-size: 1.8rem;
   margin-left: 4rem;
   font-weight: 500;
   color: var(--text-color);
   transition: 0.3s ease-in-out;
+  border-bottom: 2px solid transparent;
+}
+
+.navBar a:hover {
+  color: var(--main-color);
   border-bottom: 3px solid var(--main-color);
 }
 
@@ -134,12 +143,12 @@ section {
   box-shadow: 0 0 25px var(--text-color);
 }
 
-.about {
+.aboutMe {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10rem;
-  background: var(--bg-second-color);
+  /* background: var(--bg-second-color); */
 }
 
 .about-img img {
@@ -174,3 +183,60 @@ section {
 ::-webkit-scrollbar-track {
   background-color: var(--bg-color);
 } */
+
+.heading {
+  text-align: center;
+  font-size: 7rem;
+  margin: 5rem 0;
+}
+
+.services {
+  color: var(--text-color);
+}
+
+.services h2 {
+  color: var(--text-color);
+}
+
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.services-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-second-color);
+  height: 600px;
+  border-radius: 3rem;
+  cursor: pointer;
+  border: 5px soild transparent;
+}
+
+.services-info {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem;
+}
+
+.services-info h4 {
+  font-size: 4rem;
+  margin: 2rem 0;
+  font-weight: 800;
+}
+
+.services-info p {
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+.services-info i {
+  font-size: 8rem;
+}
