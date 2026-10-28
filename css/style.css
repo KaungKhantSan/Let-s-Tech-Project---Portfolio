@@ -240,3 +240,223 @@ section {
 .services-info i {
   font-size: 8rem;
 }
+
+.projects-box {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3rem;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--bg-second-color);
+  border-radius: 3rem;
+  gap: 2rem;
+  padding: 5rem 2rem;
+  overflow: hidden;
+}
+
+.project-card img {
+  max-width: 300px;
+  border-radius: 2rem;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  font-size: 3rem;
+}
+
+.project-card p {
+  font-size: 1.6rem;
+}
+
+.contact h2 {
+  margin-bottom: 3rem;
+  color: var(--text-color);
+}
+
+.contact form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  margin: 3rem 0;
+  text-align: center;
+}
+
+.contact h3 {
+  text-align: left;
+  font-size: 2rem;
+}
+
+.contact form .input-box input,
+.contact form textarea {
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.8rem;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  border-radius: 2rem;
+  border: 2px solid var(--main-color);
+  margin: 1.5rem 0;
+  resize: none;
+}
+
+.btn {
+  align-items: center;
+  appearance: none;
+  background-color: var(--text-color);
+  border-radius: 4px;
+  border-width: 0;
+  box-sizing: border-box;
+  color: #36395a;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono", monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition:
+    box-shadow 0.15s,
+    transform 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 18px;
+}
+
+.btn:focus {
+  box-shadow:
+    #d6d6e7 0 0 0 1.5px inset,
+    rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+    #d6d6e7 0 -3px 0 inset;
+}
+
+.btn:hover {
+  box-shadow:
+    rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+    #d6d6e7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  box-shadow: #d6d6e7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+.footer {
+  background-color: var(--bg-second-color);
+  padding: 50px 0;
+}
+
+.footer .social-icons {
+  text-align: center;
+}
+
+.footer ul {
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.footer ul li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.footer ul li a {
+  color: white;
+  border-bottom: 3px solid transparent;
+  transition: 0.3s ease-in-out;
+}
+
+.footer ul li a:hover {
+  border-bottom: 3px solid var(--main-color);
+}
+
+.footer .copyright {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 16px;
+}
+
+@media (max-width: 900px) {
+  .projects-box {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-box {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1280px) {
+  #menu-icon {
+    display: block;
+  }
+  .navBar {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 50%;
+    padding: 1rem 3rem;
+    background: rgba(0, 0, 0, 0.8);
+    border-bottom-left-radius: 2rem;
+    border-left: 2px solid var(--main-color);
+    border-bottom: 2px solid var(--main-color);
+    display: none;
+  }
+  .navBar a {
+    display: block;
+    font-size: 2rem;
+    margin: 3rem 0;
+    color: var(--text-color);
+  }
+  .navBar.active {
+    display: block;
+  }
+  .home {
+    flex-direction: column-reverse;
+    margin: 5rem 0;
+    gap: 5rem;
+  }
+  .home-content {
+    align-items: center;
+    text-align: center;
+  }
+  .home-img img {
+    width: 56vw;
+  }
+
+  .aboutMe {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .aboutMe h2 {
+    text-align: center;
+    margin: 2rem 0;
+  }
+  .about-img img {
+    width: 52vw;
+  }
+  .contact form {
+    flex-direction: column;
+  }
+}
