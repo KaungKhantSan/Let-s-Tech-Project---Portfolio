@@ -145,3 +145,38 @@ filterButtons.forEach((button) => {
 });
 
 renderProjects("All");
+
+const themeToggle = document.querySelector("#theme-toggle");
+const themeStorageKey = "portfolio-theme";
+
+if (themeToggle) {
+  function applyTheme(theme) {
+    const isDark = theme === "dark";
+    document.documentElement.dataset.theme = isDark ? "dark" : "light";
+    themeToggle.setAttribute("aria-pressed", String(isDark));
+    themeToggle.textContent = isDark ? "Dark theme on" : "Dark theme off";
+  }
+
+  let savedTheme;
+
+  try {
+    savedTheme = window.localStorage.getItem(themeStorageKey);
+  } catch (error) {
+    console.log(error, "Something went wrong.");
+  }
+
+  applyTheme(savedTheme === "dark" ? "dark" : "light");
+
+  themeToggle.addEventListener("click", () => {
+    const nextTheme =
+      document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+
+    applyTheme(nextTheme);
+
+    try {
+      window.localStorage.setItem(themeStorageKey, nextTheme);
+    } catch (error) {
+      console.log(error, "Something went wrong.");
+    }
+  });
+}

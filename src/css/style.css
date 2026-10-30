@@ -7,13 +7,6 @@
   font-family: "Poppins";
 }
 
-:root {
-  --bg-color: #1e2023;
-  --bg-second-color: #252528;
-  --text-color: #d6e7d2;
-  --main-color: #acadba;
-}
-
 html {
   font-size: 60%;
   overflow-x: hidden;
@@ -30,7 +23,7 @@ body {
   left: 0;
   top: 0;
   padding: 4rem 15%;
-  background: rgba(0, 0, 0, 0.3);
+  background: var(--header-bg);
   backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;
@@ -299,7 +292,7 @@ section {
   padding: 2rem;
   font-size: 1.8rem;
   color: var(--text-color);
-  background-color: var(--bg-color);
+  background-color: var(--input-bg);
   border-radius: 2rem;
   border: 2px solid var(--main-color);
   margin: 1.5rem 0;
@@ -309,11 +302,11 @@ section {
 .btn {
   align-items: center;
   appearance: none;
-  background-color: var(--text-color);
+  background-color: var(--button-bg);
   border-radius: 4px;
   border-width: 0;
   box-sizing: border-box;
-  color: #36395a;
+  color: var(--button-text);
   cursor: pointer;
   display: inline-flex;
   font-family: "JetBrains Mono", monospace;
@@ -339,11 +332,7 @@ section {
 }
 
 .btn:focus {
-  box-shadow:
-    #d6d6e7 0 0 0 1.5px inset,
-    rgba(45, 35, 66, 0.4) 0 2px 4px,
-    rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
-    #d6d6e7 0 -3px 0 inset;
+  box-shadow: var(--focus-color);
 }
 
 .btn:hover {
@@ -379,7 +368,7 @@ section {
 }
 
 .footer ul li a {
-  color: white;
+  color: var(--footer-link);
   border-bottom: 3px solid transparent;
   transition: 0.3s ease-in-out;
 }
@@ -416,7 +405,7 @@ section {
     right: 0;
     width: 50%;
     padding: 1rem 3rem;
-    background: rgba(0, 0, 0, 0.8);
+    background: var(--nav-bg);
     border-bottom-left-radius: 2rem;
     border-left: 2px solid var(--main-color);
     border-bottom: 2px solid var(--main-color);
@@ -469,7 +458,7 @@ section {
 
 .contact .field-error {
   min-height: 1.8rem;
-  color: #ffb4ab;
+  color: var(--error-color);
   text-align: left;
   font-size: 1.5rem;
 }
@@ -499,8 +488,8 @@ section {
 }
 
 .filter-button[aria-pressed="true"] {
-  background: var(--main-color);
-  color: var(--bg-color);
+  background: var(--button-bg);
+  color: var(--button-text);
 }
 
 #project-results {
@@ -509,3 +498,49 @@ section {
   font-size: 1.6rem;
 }
 
+:root {
+  color-scheme: light;
+  --bg-color: #f4f6f8;
+  --bg-second-color: #ffffff;
+  --text-color: #17212b;
+  --main-color: #315f72;
+  --header-bg: rgba(255, 255, 255, 0.94);
+  --nav-bg: #ffffff;
+  --input-bg: #ffffff;
+  --button-bg: #315f72;
+  --button-text: #ffffff;
+  --error-color: #b42318;
+  --focus-color: #005fcc;
+  --footer-link: #17212b;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg-color: #1e2023;
+  --bg-second-color: #252528;
+  --text-color: #d6e7d2;
+  --main-color: #acadba;
+  --header-bg: rgba(0, 0, 0, 0.82);
+  --nav-bg: #202124;
+  --input-bg: #1e2023;
+  --button-bg: #d6e7d2;
+  --button-text: #1e2023;
+  --error-color: #ffb4ab;
+  --focus-color: #ffe082;
+  --footer-link: #d6e7d2;
+}
+
+#theme-toggle {
+  padding: 1rem 1.5rem;
+  border: 2px solid var(--main-color);
+  border-radius: 1rem;
+  background: var(--button-bg);
+  color: var(--button-text);
+  cursor: pointer;
+  font-size: 1.6rem;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 3px;
+}
