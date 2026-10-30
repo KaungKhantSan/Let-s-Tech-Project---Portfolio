@@ -21,6 +21,15 @@
         <a href="#projects" class="projects">Projects</a>
         <a href="#contact" class="contact">Contact</a>
       </nav>
+
+      <button
+        id="theme-toggle"
+        type="button"
+        aria-label="Dark theme"
+        aria-pressed="false"
+      >
+        Dark theme
+      </button>
     </header>
 
     <section class="home" id="home">
@@ -108,79 +117,89 @@
     <section class="projects" id="projects">
       <h2 class="heading">Projects</h2>
 
-      <div class="projects-box">
-        <div class="project-card">
-          <img src="assets/Screenshot 2026-10-28 145723.png" alt="" />
-          <h3>Project 1</h3>
-          <p>This is a project I made for the final Assignment in HDIT.</p>
-        </div>
-
-        <div class="project-card">
-          <img src="assets/1f10620187d05b2f5ece68a29ef951b0.jpg" alt="" />
-          <h3>Project 2</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Consequatur suscipit alias incidunt necessitatibus deserunt earum ad
-            fugiat libero unde quas voluptas laborum sit sapiente, totam,
-            temporibus rerum repudiandae. Quibusdam, sed?
-          </p>
-        </div>
-
-        <div class="project-card">
-          <img src="assets/3d9405081b2c0bbd38f3a22aa67f547c.jpg" alt="" />
-          <h3>Project 3</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Consequatur suscipit alias incidunt necessitatibus deserunt earum ad
-            fugiat libero unde quas voluptas laborum sit sapiente, totam,
-            temporibus rerum repudiandae. Quibusdam, sed?
-          </p>
-        </div>
-
-        <div class="project-card">
-          <img src="assets/afd4ffc577d5086dbfb3029b1802fe68.jpg" alt="" />
-          <h3>Project 4</h3>
-          <p>Coming Soon...</p>
-        </div>
-
-        <div class="project-card">
-          <img src="assets/ee1275892abc401e7ed73f2d7123c5b8.jpg" alt="" />
-          <h3>Project 5</h3>
-          <p>Coming Soon...</p>
-        </div>
-        <div class="project-card">
-          <img src="assets/ee1275892abc401e7ed73f2d7123c5b8.jpg" alt="" />
-          <h3>Project 6</h3>
-          <p>Coming Soon...</p>
-        </div>
+      <div
+        class="projects-filters"
+        role="group"
+        aria-label="Filter projects by category"
+      >
+        <button
+          type="button"
+          class="filter-button"
+          data-category="All"
+          aria-pressed="true"
+        >
+          All
+        </button>
+        <button
+          type="button"
+          class="filter-button"
+          data-category="Websites"
+          aria-pressed="false"
+        >
+          Websites
+        </button>
+        <button
+          type="button"
+          class="filter-button"
+          data-category="JavaScript Apps"
+          aria-pressed="false"
+        >
+          JavaScript Apps
+        </button>
       </div>
+      <p id="project-results" role="status" aria-live="polite"></p>
+      <div class="projects-box" id="projects-list"></div>
     </section>
 
     <section class="contact" id="contact">
       <h2 class="heading">Contact</h2>
 
-      <form action="">
+      <form id="contact-form" novalidate>
         <div class="input-group-1">
           <div class="input-box">
-            <h3>Your Name</h3>
-            <input type="text" placeholder="KaungKhantSan" />
-            <h3>Email</h3>
-            <input type="email" placeholder="KaungKhantSan@gmail.com" />
+            <label for="contact-name">Name</label>
+            <input
+              id="contact-name"
+              name="name"
+              type="text"
+              required
+              autocomplete="name"
+              aria-describedby="contact-name-error"
+              placeholder="KaungKhantSan"
+            />
+            <p class="field-error" id="contact-name-error"></p>
+
+            <label for="contact-email">Email</label>
+            <input
+              id="contact-email"
+              name="email"
+              type="email"
+              required
+              autocomplete="email"
+              aria-describedby="contact-email-error"
+              placeholder="KaungKhantSan@gmail.com"
+            />
+            <p class="field-error" id="contact-email-error"></p>
           </div>
-          <div class="input-box">
-            <h3>Phone Number</h3>
-            <input type="number" placeholder="+95 1234567" />
+
+          <div class="input-group-2">
+            <label for="contact-message">Message</label>
+            <textarea
+              name="message"
+              id="contact-message"
+              required
+              aria-describedby="contact-message-error message-count"
+              placeholder="Your Message"
+              cols="30"
+              rows="10"
+            ></textarea>
+            <p class="field-error" id="contact-message-error"></p>
+            <p id="message-count" aria-live="polite">
+              0 / 500 characters (20 minimum)
+            </p>
+            <button type="submit" class="btn">Send Message</button>
+            <p id="contact-status" role="status" aria-live="polite"></p>
           </div>
-        </div>
-        <div class="input-group-2">
-          <textarea
-            name=""
-            id=""
-            placeholder="Your Message"
-            cols="30"
-            rows="10"
-          ></textarea>
-          <input type="submit" value="Send Message" class="btn" />
         </div>
       </form>
     </section>
