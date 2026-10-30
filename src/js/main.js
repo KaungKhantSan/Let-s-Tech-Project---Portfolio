@@ -153,8 +153,7 @@ if (themeToggle) {
   function applyTheme(theme) {
     const isDark = theme === "dark";
     document.documentElement.dataset.theme = isDark ? "dark" : "light";
-    themeToggle.setAttribute("aria-pressed", String(isDark));
-    themeToggle.textContent = isDark ? "Dark theme on" : "Dark theme off";
+    themeToggle.setAttribute("aria-checked", String(isDark));
   }
 
   let savedTheme;

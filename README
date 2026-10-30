@@ -2,4 +2,10 @@ In this project I build a website using only HTML, CSS and JavaScipt.
 
 User can use on different decives.
 
-User can go through navigation and send the message to see the toast-message.
+User can go through navigation.
+
+Theme mode is implemented so user can use both dark mode and light mode.
+
+Form is validate and has error messages.
+
+When users send message they can see "Demo only. Your message has not been sent.".
