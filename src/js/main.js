@@ -150,10 +150,15 @@ const themeToggle = document.querySelector("#theme-toggle");
 const themeStorageKey = "portfolio-theme";
 
 if (themeToggle) {
+  const themeLabel = themeToggle.querySelector("#theme-label");
+
   function applyTheme(theme) {
     const isDark = theme === "dark";
     document.documentElement.dataset.theme = isDark ? "dark" : "light";
     themeToggle.setAttribute("aria-checked", String(isDark));
+    if (themeLabel) {
+      themeLabel.textContent = isDark ? "Dark mode" : "Light mode";
+    }
   }
 
   let savedTheme;
